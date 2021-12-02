@@ -1,6 +1,6 @@
 {
   "name": "alertas",
-  "version": "1",
+  "version": "1.0.0",
   "description": "API de Alertas",
   "main": "index.js",
   "scripts": {

@@ -25,7 +25,7 @@ paths:
       parameters:
       - name: idAlarma
         in: path
-        description: El id del usuario
+        description: El id de la alarma
         required: true
         style: simple
         explode: false
@@ -61,10 +61,10 @@ components:
     DatosAlarma:
       required:
       - idAlerta
-      - idUsuario
+      - idAlarma
       type: object
       properties:
-        idUsuario:
+        idAlarma:
           type: number
           example: 1
         idAlerta:
@@ -72,7 +72,7 @@ components:
           example: 1
       description: Identificador de la alerta
       example:
-        idUsuario: 1
+        idAlarma: 1
         idAlerta: 1
   responses:
     "404NotFound":

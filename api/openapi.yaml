@@ -15,15 +15,15 @@ tags:
 - name: principal
   description: principal
 paths:
-  /alarma/{idUsuario}/{idAlerta}:
+  /alarma/{idAlarma}/{idAlerta}:
     post:
       tags:
       - principal
       description: Permite lanzar la alarma correspondiente con los parámetros de
         entrada
-      operationId: alarmaIdUsuarioIdAlertaPOST
+      operationId: alertaIdAlarmaIdAlertaPOST
       parameters:
-      - name: idUsuario
+      - name: idAlarma
         in: path
         description: El id del usuario
         required: true

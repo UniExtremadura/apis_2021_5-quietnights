@@ -21,7 +21,7 @@ paths:
       - principal
       description: Permite lanzar la alarma correspondiente con los parámetros de
         entrada
-      operationId: alarmaIdUsuarioIdAlertaPOST
+      operationId: alarmaIdAlarmaIdAlertaPOST
       parameters:
       - name: idAlarma
         in: path

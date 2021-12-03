@@ -1,0 +1,85 @@
+openapi: 3.0.0
+info:
+  title: Alertas
+  description: API de Alertas
+  contact:
+    email: mjimeneznso@alumnos.unex.es
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: "1.0.0"
+servers:
+- url: https://virtserver.swaggerhub.com/UEX-IST-G1/Alertas/v1.0.0
+  description: SwaggerHub API Auto Mocking
+tags:
+- name: principal
+  description: principal
+paths:
+  /alarma/{idAlarma}/{idAlerta}:
+    post:
+      tags:
+      - principal
+      description: Permite lanzar la alarma correspondiente con los parámetros de
+        entrada
+      operationId: alarmaIdUsuarioIdAlertaPOST
+      parameters:
+      - name: idAlarma
+        in: path
+        description: El id de la alarma
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: number
+          example: 1
+      - name: idAlerta
+        in: path
+        description: El id de la Alerta
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: number
+          example: 1
+      responses:
+        "200":
+          description: datos alarma encontrados
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DatosAlarma'
+                x-content-type: application/json
+        "400":
+          description: "entrada incorrecta, object incorrecto"
+        "404":
+          description: el objeto no existe
+      x-swagger-router-controller: Principal
+components:
+  schemas:
+    DatosAlarma:
+      required:
+      - idAlerta
+      - idAlarma
+      type: object
+      properties:
+        idAlarma:
+          type: number
+          example: 1
+        idAlerta:
+          type: number
+          example: 1
+      description: Identificador de la alerta
+      example:
+        idAlarma: 1
+        idAlerta: 1
+  responses:
+    "404NotFound":
+      description: Not found response
+      content:
+        text/plain:
+          schema:
+            title: Endpoint not found
+            type: string
+            example: Not found

@@ -12,10 +12,10 @@ exports.alarmaIdUsuarioIdAlertaPOST = function(idUsuario,idAlerta) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = [ {
-  "idUsuario" : 1,
+  "idAlarma" : 1,
   "idAlerta" : 1
 }, {
-  "idUsuario" : 1,
+  "idAlarma" : 1,
   "idAlerta" : 1
 } ];
     if (Object.keys(examples).length > 0) {
